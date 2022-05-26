@@ -7,85 +7,96 @@
     <artifactId>zero_test</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <parent>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.3.0.RELEASE</version>
+    </parent>
+
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <start-class>com.sf.App</start-class>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot</artifactId>
-            <version>2.3.0.RELEASE</version>
-        </dependency>
-
+        <!-- web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.3.0.RELEASE</version>
         </dependency>
-
+        <!-- thymeleaf -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
-            <version>2.6.4</version>
         </dependency>
+        <!-- pdf -->
         <dependency>
             <groupId>org.xhtmlrenderer</groupId>
             <artifactId>flying-saucer-pdf</artifactId>
             <version>9.0.7</version>
         </dependency>
 
-        <!--<dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>2.2.0</version>
-        </dependency>
+        <!-- mysql -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.20</version>
-        </dependency>-->
+        </dependency>
+        <!-- mybatis-plus-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+        <!-- 连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.8</version>
+        </dependency>
 
+        <!-- fastjson -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.79</version>
         </dependency>
-
+        <!-- lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.22</version>
         </dependency>
 
+        <!-- test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <version>2.3.0.RELEASE</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
         <plugins>
-            <!-- fat jar将环境运行需要的依赖包也打进来 -->
+            <!-- fat jar清单-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <phase>package</phase>
+                        <id>repackage</id>
                         <goals>
                             <goal>repackage</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
-                    <includeSystemScope>true</includeSystemScope>
-                    <mainClass>com.sf.App</mainClass>
+                    <mainClass>${start-class}</mainClass>
                 </configuration>
             </plugin>
 
@@ -99,16 +110,16 @@
                 </configuration>
             </plugin>
 
-            <!-- docker-maven-plugin插件 -->
+            <!--&lt;!&ndash; docker-maven-plugin插件 &ndash;&gt;
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.0.0</version>
-                <!--将插件绑定在某个phase执行-->
+                &lt;!&ndash;将插件绑定在某个phase执行&ndash;&gt;
                 <executions>
                     <execution>
                         <id>build-image</id>
-                        <!--用户只需执行mvn package ，就会自动执行mvn docker:build-->
+                        &lt;!&ndash;用户只需执行mvn package ，就会自动执行mvn docker:build&ndash;&gt;
                         <phase>package</phase>
                         <goals>
                             <goal>build</goal>
@@ -116,27 +127,27 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <!-- 镜像名 -->
+                    &lt;!&ndash; 镜像名 &ndash;&gt;
                     <imageName>application</imageName>
 
-                    <!-- 指定Dockerfile位置 -->
+                    &lt;!&ndash; 指定Dockerfile位置 &ndash;&gt;
                     <dockerDirectory>${project.basedir}/docker</dockerDirectory>
 
-                    <!-- 指定远程docker地址 -->
+                    &lt;!&ndash; 指定远程docker地址 &ndash;&gt;
                     <dockerHost>http://10.207.0.164:2375</dockerHost>
-                    <!-- 复制jar包到docker容器指定目录 -->
+                    &lt;!&ndash; 复制jar包到docker容器指定目录 &ndash;&gt;
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
-                            <!-- jar包所在路径，此处对应target目录 -->
+                            &lt;!&ndash; jar包所在路径，此处对应target目录 &ndash;&gt;
                             <directory>${project.build.directory}</directory>
                             <directory>${project.build.directory}</directory>
-                            <!-- 用于指定需要复制的⽂件需要包含的jar包，这里对应的是Dockerfile中添加的⽂件名-->
+                            &lt;!&ndash; 用于指定需要复制的⽂件需要包含的jar包，这里对应的是Dockerfile中添加的⽂件名&ndash;&gt;
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
                 </configuration>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 </project>
