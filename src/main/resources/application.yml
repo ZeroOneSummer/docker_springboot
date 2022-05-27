@@ -37,6 +37,41 @@ spring:
       enabled: true  #设置开启热部署
       additional-paths: src/main/java #重启目录
       exclude: static/**,WEB-INF/**
+  # flyway
+  flyway:
+    # 是否启用flyway
+    enabled: true
+    # 编码格式，默认UTF-8
+    encoding: UTF-8
+    # 修改默认表名(flyway_schema_history)，可实现多个模块分别通过Flyway进行数据库版本控制
+    table: flyway_schema_history_zero
+    # 迁移sql脚本文件存放路径，默认db/migration
+    locations: classpath:db/migration
+    # 迁移sql脚本文件名称的前缀，默认V
+    sql-migration-prefix: V
+    # 迁移sql脚本文件名称的分隔符，默认2个下划线__
+    sql-migration-separator: __
+    # 迁移sql脚本文件名称的后缀
+    sql-migration-suffixes: .sql
+    # 迁移时是否进行校验，默认true
+    validate-on-migrate: true
+    # 对执行迁移时基准版本的描述
+    baseline-description: test
+    # 当迁移时发现目标schema非空，而且带有没有元数据的表时，是否自动执行基准迁移，默认false.
+    # 设置为 true 后 flyway 将在需要 baseline 的时候, 自动执行一次 baseline。
+    baseline-on-migrate: true
+    # 指定 baseline 的版本号,默认值为 1, 低于该版本号的 SQL 文件, migrate 时会被忽略
+    baseline-version: 1
+    # 是否禁用清库，生产务必设置成 true
+    clean-disabled: true
+    # 是否允许不按顺序迁移 开发建议 true  生产建议 false
+    out-of-order: true
+    # 检查迁移脚本的位置是否存在，默认false
+    check-location: false
+    # 当读取元数据表时是否忽略错误的迁移，默认false
+    ignore-future-migrations: false
+    # 当初始化好连接时要执行的SQL
+    init-sqls: show tables;
 
 # mybatis-plus
 mybatis-plus:

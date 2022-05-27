@@ -59,6 +59,13 @@
             <version>1.2.8</version>
         </dependency>
 
+        <!-- flyway数据库版本控制 -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>6.1.0</version>
+        </dependency>
+
         <!-- fastjson -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -91,6 +98,31 @@
 
     <build>
         <plugins>
+            <!-- flyway插件：不需要启动项目就可执行，右侧工具类添加flyway方便操作 -->
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>6.1.0</version>
+                <configuration>
+                    <url>jdbc:mysql://10.207.0.164:3307/sf_mall?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai&amp;allowMultiQueries=true</url>
+                    <user>root</user>
+                    <password>root</password>
+                    <driver>com.mysql.cj.jdbc.Driver</driver>
+                    <locations>
+                        <!--数据库sql文件目录，磁盘filesystem，项目classpath-->
+                        <location>filesystem:${basedir}/src/main/resources/db/migration/</location>
+                    </locations>
+                    <table>flyway_schema_history_zero</table>
+                    <!--社区版不支持undo-->
+                    <!--<undoSqlMigrationPrefix>U</undoSqlMigrationPrefix>-->
+                    <!--<sqlMigrationPrefix>V</sqlMigrationPrefix>
+                    <repeatableSqlMigrationPrefix>R</repeatableSqlMigrationPrefix>
+                    <sqlMigrationSeparator>__</sqlMigrationSeparator>
+                    <sqlMigrationSuffixes>.sql</sqlMigrationSuffixes>
+                    <encoding>UTF-8</encoding>-->
+                </configuration>
+            </plugin>
+
             <!-- fat jar清单-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
