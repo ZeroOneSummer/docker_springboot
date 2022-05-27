@@ -1,0 +1,89 @@
+[] 15:38:28.577 [main] INFO  com.sf.App - [logStarting,55] - Starting App on DESKTOP-8DJKDML with PID 5600 (D:\git\zero_test\target\classes started by FORMSSI in D:\git\zero_test)
+[] 15:38:28.593 [main] INFO  com.sf.App - [logStartupProfileInfo,651] - No active profile set, falling back to default profiles: default
+[] 15:38:33.171 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8088"]
+[] 15:38:33.171 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+[] 15:38:33.171 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.35]
+[] 15:38:33.439 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+[] 15:38:35.393 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8088"]
+[] 15:38:35.431 [main] INFO  com.sf.App - [onApplicationEvent,19] - App is started ok.
+[] 15:38:35.447 [main] INFO  com.sf.App - [logStarted,61] - Started App in 7.916 seconds (JVM running for 9.691)
+[] 15:38:44.679 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+[] 15:41:54.015 [main] INFO  com.sf.App - [logStarting,55] - Starting App on DESKTOP-8DJKDML with PID 19716 (D:\git\zero_test\target\classes started by FORMSSI in D:\git\zero_test)
+[] 15:41:54.015 [main] INFO  com.sf.App - [logStartupProfileInfo,651] - No active profile set, falling back to default profiles: default
+[] 15:41:56.100 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8088"]
+[] 15:41:56.100 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+[] 15:41:56.100 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.35]
+[] 15:41:56.384 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+[] 15:41:58.626 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8088"]
+[] 15:41:58.673 [main] INFO  com.sf.App - [onApplicationEvent,19] - App is started ok.
+[] 15:41:59.125 [main] INFO  com.sf.App - [logStarted,61] - Started App in 5.602 seconds (JVM running for 7.881)
+[] 15:42:26.565 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 15:42:58.631 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+[] 16:06:03.763 [main] INFO  com.sf.App - [logStarting,55] - Starting App v1.0-SNAPSHOT on DESKTOP-8DJKDML with PID 10712 (D:\git\zero_test\target\zero_test-1.0-SNAPSHOT.jar started by FORMSSI in D:\git\zero_test)
+[] 16:06:03.795 [main] INFO  com.sf.App - [logStartupProfileInfo,651] - No active profile set, falling back to default profiles: default
+[] 16:06:08.477 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8088"]
+[] 16:06:08.480 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+[] 16:06:08.481 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.35]
+[] 16:06:08.795 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+[] 16:06:11.461 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8088"]
+[] 16:06:11.713 [main] INFO  com.sf.App - [onApplicationEvent,19] - App is started ok.
+[] 16:06:11.729 [main] INFO  com.sf.App - [logStarted,61] - Started App in 9.077 seconds (JVM running for 10.653)
+[] 16:06:20.297 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 16:58:10.461 [main] INFO  com.sf.App - [logStarting,55] - Starting App on DESKTOP-8DJKDML with PID 14824 (D:\git\zero_test\target\classes started by FORMSSI in D:\git\zero_test)
+[] 16:58:10.494 [main] INFO  com.sf.App - [logStartupProfileInfo,651] - No active profile set, falling back to default profiles: default
+[] 16:58:14.046 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8088"]
+[] 16:58:14.046 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+[] 16:58:14.062 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.35]
+[] 16:58:14.265 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+[] 16:58:15.646 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8088"]
+[] 16:58:15.693 [main] INFO  com.sf.App - [onApplicationEvent,19] - App is started ok.
+[] 16:58:15.709 [main] INFO  com.sf.App - [logStarted,61] - Started App in 6.714 seconds (JVM running for 13.419)
+[] 16:58:21.290 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 17:08:13.473 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+[] 17:08:25.155 [main] INFO  com.sf.App - [logStarting,55] - Starting App on DESKTOP-8DJKDML with PID 6896 (D:\git\zero_test\target\classes started by FORMSSI in D:\git\zero_test)
+[] 17:08:25.170 [main] INFO  com.sf.App - [logStartupProfileInfo,651] - No active profile set, falling back to default profiles: default
+[] 17:08:26.925 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8088"]
+[] 17:08:26.925 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+[] 17:08:26.925 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.35]
+[] 17:08:27.148 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+[] 17:08:27.633 [main] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+[] 17:10:18.551 [main] INFO  com.sf.App - [logStarting,55] - Starting App on DESKTOP-8DJKDML with PID 19672 (D:\git\zero_test\target\classes started by FORMSSI in D:\git\zero_test)
+[] 17:10:18.551 [main] INFO  com.sf.App - [logStartupProfileInfo,651] - No active profile set, falling back to default profiles: default
+[] 17:10:20.120 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8088"]
+[] 17:10:20.120 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+[] 17:10:20.120 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.35]
+[] 17:10:20.307 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+[] 17:10:21.248 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8088"]
+[] 17:10:21.295 [main] INFO  com.sf.App - [onApplicationEvent,21] - App is started ok.
+[] 17:10:21.311 [main] INFO  com.sf.App - [logStarted,61] - Started App in 3.288 seconds (JVM running for 4.292)
+[] 17:10:49.581 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 17:35:53.450 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+[] 17:36:01.013 [main] INFO  com.sf.App - [logStarting,55] - Starting App on DESKTOP-8DJKDML with PID 7440 (D:\git\zero_test\target\classes started by FORMSSI in D:\git\zero_test)
+[] 17:36:01.028 [main] INFO  com.sf.App - [logStartupProfileInfo,651] - No active profile set, falling back to default profiles: default
+[] 17:36:03.050 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8088"]
+[] 17:36:03.050 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+[] 17:36:03.050 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.35]
+[] 17:36:03.238 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+[] 17:36:04.464 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8088"]
+[] 17:36:04.511 [main] INFO  com.sf.App - [onApplicationEvent,21] - App is started ok.
+[] 17:36:04.511 [main] INFO  com.sf.App - [logStarted,61] - Started App in 3.98 seconds (JVM running for 4.924)
+[] 17:36:31.806 [http-nio-8088-exec-3] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 17:36:32.262 [http-nio-8088-exec-3] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+[] 17:36:32.479 [Druid-ConnectionPool-Create-423519001] INFO  c.a.d.p.DruidAbstractDataSource - [setFailContinuous,1804] - {dataSource-1} failContinuous is true
+[] 17:36:48.932 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-1} closing ...
+[] 17:36:48.932 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-1} closed
+[] 17:39:01.501 [main] INFO  com.sf.App - [logStarting,55] - Starting App on DESKTOP-8DJKDML with PID 17620 (D:\git\zero_test\target\classes started by FORMSSI in D:\git\zero_test)
+[] 17:39:01.506 [main] INFO  com.sf.App - [logStartupProfileInfo,651] - No active profile set, falling back to default profiles: default
+[] 17:39:03.478 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8088"]
+[] 17:39:03.479 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+[] 17:39:03.479 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.35]
+[] 17:39:03.671 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+[] 17:39:04.702 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8088"]
+[] 17:39:04.741 [main] INFO  com.sf.App - [onApplicationEvent,21] - App is started ok.
+[] 17:39:04.746 [main] INFO  com.sf.App - [logStarted,61] - Started App in 3.743 seconds (JVM running for 4.71)
+[] 17:39:30.195 [http-nio-8088-exec-2] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 17:39:30.423 [http-nio-8088-exec-2] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+[] 17:41:27.751 [http-nio-8088-exec-8] INFO  c.s.c.UserController - [getUsers,38] - userList -> [{"createDate":1653529172000,"id":1,"name":"李宁","sex":"男"},{"createDate":1653529217000,"id":2,"name":"张三","sex":"男"},{"createDate":1653529224000,"id":3,"name":"李四","sex":"男"},{"createDate":1653529229000,"id":4,"name":"王五","sex":"男"},{"createDate":1653529234000,"id":5,"name":"赵六","sex":"男"}]
+[] 17:42:03.723 [http-nio-8088-exec-9] INFO  c.s.c.UserController - [delUser,31] - delUser -> 5
+[] 17:42:15.627 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-1} closing ...
+[] 17:42:15.658 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-1} closed

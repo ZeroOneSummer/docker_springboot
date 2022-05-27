@@ -1,7 +1,7 @@
 package com.sf.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sf.bean.UserBean;
 import com.sf.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -33,8 +33,8 @@ public class UserController {
     }
 
     @GetMapping("getUsers")
-    public IPage<UserBean> getUsers() {
-        IPage<UserBean> userPage = userService.queryUsers(1L, 3L);
+    public Page<UserBean> getUsers() {
+        Page<UserBean> userPage = userService.queryUsers(1L, 3L);
         log.info("userList -> {}", JSON.toJSONString(userPage.getRecords()));
         return userPage;
     }

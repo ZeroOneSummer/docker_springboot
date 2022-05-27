@@ -79,6 +79,14 @@
             <version>2.3.0.RELEASE</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- devtools -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <!--true依赖不会传递-->
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <build>
@@ -110,16 +118,16 @@
                 </configuration>
             </plugin>
 
-            <!--&lt;!&ndash; docker-maven-plugin插件 &ndash;&gt;
+            <!-- docker-maven-plugin插件 -->
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.0.0</version>
-                &lt;!&ndash;将插件绑定在某个phase执行&ndash;&gt;
+                <!--将插件绑定在某个phase执行-->
                 <executions>
                     <execution>
                         <id>build-image</id>
-                        &lt;!&ndash;用户只需执行mvn package ，就会自动执行mvn docker:build&ndash;&gt;
+                        <!--用户只需执行mvn package ，就会自动执行mvn docker:build-->
                         <phase>package</phase>
                         <goals>
                             <goal>build</goal>
@@ -127,27 +135,27 @@
                     </execution>
                 </executions>
                 <configuration>
-                    &lt;!&ndash; 镜像名 &ndash;&gt;
+                    <!-- 镜像名 -->
                     <imageName>application</imageName>
 
-                    &lt;!&ndash; 指定Dockerfile位置 &ndash;&gt;
+                    <!-- 指定Dockerfile位置 -->
                     <dockerDirectory>${project.basedir}/docker</dockerDirectory>
 
-                    &lt;!&ndash; 指定远程docker地址 &ndash;&gt;
+                    <!-- 指定远程docker地址 -->
                     <dockerHost>http://10.207.0.164:2375</dockerHost>
-                    &lt;!&ndash; 复制jar包到docker容器指定目录 &ndash;&gt;
+                    <!-- 复制jar包到docker容器指定目录 -->
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
-                            &lt;!&ndash; jar包所在路径，此处对应target目录 &ndash;&gt;
+                            <!-- jar包所在路径，此处对应target目录 -->
                             <directory>${project.build.directory}</directory>
                             <directory>${project.build.directory}</directory>
-                            &lt;!&ndash; 用于指定需要复制的⽂件需要包含的jar包，这里对应的是Dockerfile中添加的⽂件名&ndash;&gt;
+                            <!-- 用于指定需要复制的⽂件需要包含的jar包，这里对应的是Dockerfile中添加的⽂件名-->
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
                 </configuration>
-            </plugin>-->
+            </plugin>
         </plugins>
     </build>
 </project>
