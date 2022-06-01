@@ -94,6 +94,13 @@
             <!--true依赖不会传递-->
             <optional>true</optional>
         </dependency>
+
+        <!-- canal -->
+        <dependency>
+            <groupId>com.alibaba.otter</groupId>
+            <artifactId>canal.client</artifactId>
+            <version>1.1.4</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -104,7 +111,7 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>6.1.0</version>
                 <configuration>
-                    <url>jdbc:mysql://10.207.0.164:3307/sf_mall?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai&amp;allowMultiQueries=true</url>
+                    <url>jdbc:mysql://10.207.0.169:3306/sf_mall?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai&amp;allowMultiQueries=true</url>
                     <user>root</user>
                     <password>root</password>
                     <driver>com.mysql.cj.jdbc.Driver</driver>
