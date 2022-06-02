@@ -23,7 +23,7 @@ public class CannalClient implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         // 创建链接
-        CanalConnector connector = CanalConnectors.newSingleConnector(new InetSocketAddress("10.207.0.169", 10011), "SF_INS", "canal", "canal");
+        CanalConnector connector = CanalConnectors.newSingleConnector(new InetSocketAddress("10.207.0.169", 10011), "example", "canal", "canal");
         try {
             //打开连接
             connector.connect();
