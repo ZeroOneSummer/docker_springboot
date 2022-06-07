@@ -14,8 +14,9 @@ import static com.alibaba.otter.canal.protocol.CanalEntry.*;
 
 /**
  * canal 拦截 mysql binlog
+ * 暂时注释，不然启动连接服务（已停止）报错
  */
-@Component
+//@Component
 public class CannalClient implements InitializingBean {
 
     private final static int BATCH_SIZE = 1000;
