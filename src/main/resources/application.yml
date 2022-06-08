@@ -74,15 +74,21 @@ spring:
     init-sqls: show tables;
   # kafka
   kafka:
-    # 集群，多个用逗号隔开
+    # 集群信息，多个用逗号隔开
     bootstrap-servers: 10.207.0.167:9092
     #【生产者】
     producer:
+      # 事务ID=事务前缀+1，不为空即开启事务，生效必须 retries>0，acks=all
+      transaction-id-prefix: kfk_tx_
       # 重试次数
-      retries: 0
+      retries: 1
       # 应答级别:多少个分区副本备份完成时向生产者发送ack确认(可选0、1、all/-1)
-      acks: 1
-      # 每次批量发送消息的数量
+      #procedure要求leader在考虑完成请求之前收到的确认数，用于控制发送记录在服务端的持久化，其值可以为如下：
+      #acks = 0 如果设置为零，则生产者将不会等待来自服务器的任何确认，该记录将立即添加到套接字缓冲区并视为已发送。在这种情况下，无法保证服务器已收到记录，并且重试配置将不会生效（因为客户端通常不会知道任何故障），为每条记录返回的偏移量始终设置为-1。
+      #acks = 1 这意味着leader会将记录写入其本地日志，但无需等待所有副本服务器的完全确认即可做出回应，在这种情况下，如果leader在确认记录后立即失败，但在将数据复制到所有的副本服务器之前，则记录将会丢失。
+      #acks = all 这意味着leader将等待完整的同步副本集以确认记录，这保证了只要至少一个同步副本服务器仍然存活，记录就不会丢失，这是最强有力的保证，这相当于acks = -1的设置。
+      acks: all
+      # 每次批量发送消息的数量，16K
       batch-size: 16384
       # linger.ms为0表示每接收到一条消息就提交给kafka,这时候batch-size其实就没用了
       properties:
@@ -90,41 +96,44 @@ spring:
         # 自定义分区器，实现Partitioner接口
         # partitioner:
           # class: com.zeor.producer.CustomizePartitioner
-      # 生产端缓冲区大小
+      # 生产端缓冲区大小，32M
       buffer-memory: 33554432
-      # 指定消息key和消息体的编解码方式
+      # 指定消息key和消息体的编解码方式，也可自定义
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: com.sf.kafka.serialization.ObjectSerializer
     #【生产者】
     consumer:
       # 指定默认消费者group id
-      group-id: topicGroupId
+      group-id: zeroGroupId
+      # 是否自动提交offset
+      enable-auto-commit: false
       properties:
         # 消费会话超时时间(超过这个时间consumer没有发送心跳,就会触发rebalance操作)
         session.timeout.ms: 120000
         # 消费请求超时时间
         request.timeout.ms: 180000
-      # 批量消费每次最多消费多少条消息
-      max-poll-records: 50
+      # 默认为500，批量消费每次最多消费多少条消息
+      #max-poll-records: 50
       # 提交offset延时(接收到消息后多久提交offset)
       auto-commit-interval: 100
       # 当kafka中没有初始offset或offset超出范围时将自动重置offset
-      # earliest:重置为分区中最小的offset;
+      # earliest:当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，从头开始消费，避免消息丢失
       # latest:重置为分区中最新的offset(消费分区中新产生的数据);
       # none:只要有一个分区不存在已提交的offset,就抛出异常;
-      auto-offset-reset: latest
-      # 是否自动提交offset
-      enable-auto-commit: true
+      auto-offset-reset: earliest
       # 指定消息key和消息体的编解码方式
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: com.sf.kafka.serialization.ObjectDeserializer
     listener:
-      # 指定listener容器中的线程数，用于提高并发量
+      # 指定listener容器中的线程数（同时消费的监听器），用于提高并发量，建议与分区数量⼀致
       concurrency: 3
       # 消费端监听的topic不存在时，项目启动会报错(关掉)
       missing-topics-fatal: false
       # 设置批量消费
-      type: batch
+      #type: batch
+      # ACK模式：batch、record、time、count、count_time、manual、manual_immediate
+      # 默认batch，手动调用Acknowledgment.acknowledge()后立即提交，一般使用这种
+      ack-mode: manual_immediate
 
 # mybatis-plus
 mybatis-plus:
@@ -137,7 +146,7 @@ mybatis-plus:
 # 自定义配置
 kafka:
   topic:
-    group-id: topicGroupId
+    group-id: zeroGroupId
     topic-name:
       - zero
       - zero1

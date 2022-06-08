@@ -9,6 +9,8 @@ import java.io.Serializable;
 @Getter
 @ConfigurationProperties(prefix = "kafka.topic")
 public class KafkaTopicProperties implements Serializable {
+
     private String groupId;
+
     private String[] topicName;
 }
