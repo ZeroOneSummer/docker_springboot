@@ -16,7 +16,7 @@ import javax.sql.DataSource;
  * 同步事务：spring + kafka
  * @Transactional(transactionManager ="chainedKafkaTransactionManag")
  */
-@Configuration
+//@Configuration
 public class KafkaTransactionConfig {
 
     private final DataSource dataSource;

@@ -32,7 +32,7 @@ public class KafkaProducer {
     @Autowired
     UserService userService;
 
-    @Autowired
+    @Autowired(required = false)
     private KafkaTemplate<String, Object> kafkaTemplate;
 
     // 同步发送

@@ -13,8 +13,6 @@ import java.util.Date;
 @Accessors(chain = true)
 @TableName("t_user")
 public class UserBean implements Serializable {
-    private static final long serialVersionUID = -2571815432301283171L;
-
     @TableId(type = IdType.AUTO)
     private Integer id;
     private String name;

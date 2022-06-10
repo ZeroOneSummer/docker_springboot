@@ -2,6 +2,9 @@ server:
   port: 8088
 
 spring:
+  # 允许同名bean覆盖
+  main:
+    allow-bean-definition-overriding: true
   datasource:
     # mysql
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -21,6 +24,20 @@ spring:
       test-on-return: false
       pool-prepared-statements: true
       max-pool-prepared-statement-per-connection-size: 20
+    # 初始化batch表(方式一)
+    #schema: classpath:org/springframework/batch/core/schema-mysql.sql
+    #initialization-mode: always
+  # batch
+  batch:
+    # 初始化batch表(方式二)
+    initialize-schema: always
+    # 读取batch表加的表前缀
+    #table-prefix: ZERO_BATCH_
+    job:
+      # 禁止项目启动时运行job，默认true
+      enabled: true
+      # 启动时要执⾏的Job，不配置则执行所有
+      names: jobDemo
   # thymeleaf
   thymeleaf:
     prefix: classpath:/templates/

@@ -5,5 +5,13 @@
     <delete id="delUserById">
         DELETE FROM t_user where id = #{id, jdbcType=INTEGER}
     </delete>
+
+    <select id="queryUserList" resultType="com.sf.bean.UserBean">
+        SELECT * FROM t_user where sex = #{sex, jdbcType=VARCHAR}
+    </select>
+
+    <select id="insertUser" parameterType="com.sf.bean.UserBean">
+        insert into t_user(name, sex, phone) values(#{name, jdbcType=VARCHAR}, #{sex, jdbcType=VARCHAR}, #{phone, jdbcType=VARCHAR})
+    </select>
 </mapper>
 

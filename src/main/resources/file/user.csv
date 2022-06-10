@@ -1,0 +1,5 @@
+age,createDate,id,name,phone,sex
+18,Wed Jun 01 16:52:09 CST 2022,1,张三,奇数ID,男
+20,Wed Jun 01 16:52:09 CST 2022,2,李四,偶数ID,男
+18,Wed Jun 01 16:52:09 CST 2022,3,王五,奇数ID,男
+27,Wed Jun 01 16:52:09 CST 2022,4,赵六,偶数ID,男
